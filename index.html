@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>T1 Score</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/headerFooter.css"/>
+
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <div class="banner-principal">
+        <div class="contenedor-banner-principal">
+            <!-- Texto a la izquierda -->
+            <div class="columna texto-banner-principal">
+                <h1 class="title-h1">El hub global de<br class="d-md-none d-flex"> riesgo e<br class="d-md-flex d-none"> inteligencia<br class="d-md-none d-flex"> antifraude</h1>
+                <p>Evalúa millones de usuarios, transacciones y solicitudes de créditos sin fricción, en segundos, en todo el mundo.</p>
+                <div class="botones-banner-principal d-md-flex d-none">
+                    <div class="boton-banner" onclick="openPopUp();">Solicitar demo</div>
+                    <div class="boton-banner blanco">Conocer más</div>
+                </div>
+            </div>
+
+            <!-- Animación a la derecha -->
+            <div class="columna container-logo">
+                <div class="glow-effect"></div>
+                <div class="central-logo">
+                    <img src="assets/img/logo01.png" alt="T1score Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="data-line line-to-top"></div>
+                <div class="data-line line-to-right"></div>
+                <div class="data-line line-to-bottom"></div>
+                <div class="data-line line-to-left"></div>
+                <div class="data-point point-top"></div>
+                <div class="data-point point-right"></div>
+                <div class="data-point point-bottom"></div>
+                <div class="data-point point-left"></div>
+                <div class="floating-card card-top">
+                    <div class="card-icon" style="background-image: url('assets/img/01.png'); width: 100%; height: 100%;"></div>
+                </div>
+                <div class="floating-card card-right">
+                    <div class="card-icon" style="background-image: url('assets/img/02.png'); width: 100%; height: 100%;"></div>
+                </div>
+                <div class="floating-card card-bottom">
+                    <div class="card-icon" style="background-image: url('assets/img/03.png'); width: 100%; height: 100%;"></div>
+                </div>
+                <div class="floating-card card-left">
+                    <div class="card-icon" style="background-image: url('assets/img/04.png'); width: 100%; height: 100%;"></div>
+                </div>
+            </div>
+            <div class="botones-banner-principal d-md-none d-flex">
+                <div class="boton-banner" onclick="openPopUp();">Solicitar demo</div>
+                <div class="boton-banner blanco">Conocer más</div>
+            </div>
+        </div>
+        <div class="container-beneficios container">
+            <div class="card-beneficio">
+                <h2>+100</h2>
+                <p>Millones de peticiones anuales</p>
+            </div>
+            <div class="card-beneficio">
+                <h2>8</h2>
+                <p>Países con operaciones</p>
+            </div>
+            <div class="card-beneficio">
+                <h2>0.3%</h2>
+                <p>Tasa de contracargo</p>
+            </div>
+            <div class="card-beneficio">
+                <h2><3s</h2>
+                <p>Tiempo DE respuesta</p>
+            </div>
+            <div class="card-beneficio">
+                <h2>+250</h2>
+                <p>Variables</p>
+            </div>
+            <div class="card-beneficio">
+                <h2>24/7</h2>
+                <p>Disponibilidad operativa</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="client-section">
+        
+        <div class="logos-container">
+            <div class="shine-effect"></div>
+            <div class="logos-track" id="logosTrack">
+                <!-- Los logos se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor-que-es-t1score">
+        <div class="descripcion-que-es-t1score container" id="que-es-t1-score">
+            <h2 class="title-h2">¿Qué es <img class="logo-t1score" src="assets/img/Logo_T1_score.svg">?</h2>
+            <p class="textos-p">Es la plataforma definitiva para evaluar riesgo, prevenir fraude y tomar decisiones automatizadas con datos multifuente y reglas visuales. Unifica escoring de crédito, reputación, identidad y comportamiento en tiempo real.</p>
+        </div>
+        <!-- Swiper wrapper -->
+        <div class="contenedor-cards-t1score container swiper-container mySwiper" id="swiper-uno">
+            <div class="fondo-circulos">
+                <div class="circulo-uno"></div>
+                <div class="circulo-dos"></div>
+                <div class="circulo-degradado"></div>
+            </div>
+            <!-- Contenedor inicial de tarjetas (fuera de swiper) -->
+            <div class="tarjetas-t1score" style="display: contents;">
+                <div class="card-t1score">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/icono-ia.svg">
+                    </div>
+                    <h3 class="title-h3">Inteligencia Artificial</h3>
+                    <p>Machine Learning avanzado optimiza modelos de riesgo y fraude en tiempo real.<br> Partnership global con Visa Decision Manager para máxima precisión.</p>
+                </div>
+                <div class="card-t1score">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/200_variables.svg">
+                    </div>
+                    <h3 class="title-h3">200+ Variables</h3>
+                    <p>Datos telco, email, IP, device, transaccional, listas negras globales, indicadores de morosidad internos, behavioral y mucho más.</p>
+                </div>
+                <div class="card-t1score">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/tiempo_real.svg">
+                    </div>
+                    <h3 class="title-h3">Tiempo Real + Batch</h3>
+                    <p>Procesamiento híbrido: decisiones instantáneas (<3s) y análisis profundos según necesidad del caso de uso</p>
+                </div>
+                <div class="card-t1score">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/ecosistema_modular.svg">
+                    </div>
+                    <h3 class="title-h3">Ecosistema Modular</h3>
+                    <p>Soluciones modulares que se acomodan en cualquier orden, optimizando operaciones y costos según tu necesidad específica.</p>
+                </div>
+                <div class="card-t1score">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/partnerships_globales.svg">
+                    </div>
+                    <h3 class="title-h3">Partnerships Globales</h3>
+                    <p>Alianza estratégica con Círculo de Crédito en México y partnerships con empresas globales líderes en su sector.</p>
+                </div>
+                <div class="card-t1score">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/servicios_administrativos.svg">
+                    </div>
+                    <h3 class="title-h3">Servicios Administrados 24/7</h3>
+                    <p>Seguimiento continuo de resultados con expertos en prevención de fraudes y presentación periódica de hallazgos.</p>
+                </div>
+            </div>
+            <!-- Navegación y paginación (siempre presentes, ocultas en desktop por CSS) -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div class="contenedor-para-quien" id="para-quien-es-t1-score">
+        <div class="fondo-blob"></div>
+
+        <div class="contenido-para-quien">
+            <div class="columna izquierda-para-quien">
+                <h2 class="title-h2">¿Para quién<br class="d-md-flex d-none"> es <img class="logo-t1score" src="assets/img/Logo_T1_score.svg">?</h2>
+                <p class="textos-p">Para cualquier Fintech de crédito que quiera aprobar más sin aumentar el riesgo.</p>
+            </div>
+
+            <div class="columna derecha-para-quien">
+                <div class="card-item-para-quien">
+                    <div class="icono-para-quien">
+                        <img src="assets/img/icono-banco-digital.svg">
+                    </div>
+                    <div class="info-para-quien">
+                        <h3 class="title-h3">Bancos Digitales</h3>
+                        <p>Que procesan alto volumen y buscan reglas propias, sin depender de terceros.</p>
+                    </div>
+                </div>
+                <div class="card-item-para-quien centro">
+                    <div class="icono-para-quien">
+                        <img src="assets/img/apps.svg">
+                    </div>
+                    <div class="info-para-quien">
+                        <h3 class="title-h3">Apps</h3>
+                        <p>Con miles/millones de registros o pagos que necesitan antifraude en segundos.</p>
+                    </div>
+                </div>
+                <div class="card-item-para-quien">
+                    <div class="icono-para-quien">
+                        <img src="assets/img/marketplaces.svg">
+                    </div>
+                    <div class="info-para-quien">
+                        <h3 class="title-h3">Marketplaces</h3>
+                        <p>Que verifican sellers, compradores o cobran con riesgo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor-t1score-ofrece">
+        <div class="descripcion-t1score-ofrece container">
+            <h2 class="title-h2">Lo que sólo <img class="logo-t1score" src="assets/img/Logo_T1_score.svg"> te ofrece</h2>
+        </div>
+        <div class="contenedor-cards-t1score container swiper-container mySwiper" id="swiper-dos">
+            <div class="fondo-circulos-ofrece">
+                <div class="circulo-uno-ofrece"></div>
+                <div class="circulo-dos-ofrece"></div>
+                <div class="circulo-degradado-ofrece"></div>
+            </div>
+            <div class="tarjetas-t1score" style="display: contents;">
+                <div class="card-t1score">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/t1.svg">
+                    </div>
+                    <h3 class="title-h3">Ecosistema T1 Integrado</h3>
+                    <p>Único proveedor con ecosistema completo de soluciones financieras. Integración perfecta entre todas nuestras herramientas sin fricciones técnicas.</p>
+                </div>
+                <div class="card-t1score">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/arquitectura_modular.svg">
+                    </div>
+                    <h3 class="title-h3">Arquitectura 100% Modular</h3>
+                    <p>Soluciones que se adaptan como piezas de LEGO. Personaliza exactamente lo que necesitas, paga solo por lo que usas, escala sin límites.</p>
+                </div>
+                <div class="card-t1score">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/Democratizacion_de_Datos_Premium.svg">
+                    </div>
+                    <h3 class="title-h3">Democratización de Datos Premium</h3>
+                    <p>Nuestra misión única: hacer accesible la inteligencia de datos de clase enterprise para empresas de cualquier tamaño y sector.</p>
+                </div>
+                <div class="card-t1score mitad">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/estrategias_taylor_made.svg">
+                    </div>
+                    <h3 class="title-h3">Estrategias Taylor Made</h3>
+                    <p>No vendemos productos genéricos. Cada implementación es diseñada específicamente para tu industria, casos de uso y objetivos únicos.</p>
+                </div>
+                <div class="card-t1score mitad">
+                    <div class="icono-card-t1score">
+                        <img src="assets/img/tecnologia_propietaria.svg">
+                    </div>
+                    <h3 class="title-h3">Tecnología Propietaria T1score</h3>
+                    <p>Modelos de riesgo y fraude desarrollados internamente. Algoritmos únicos optimizados específicamente para el mercado latinoamericano</p>
+                </div>
+            </div>
+            <!-- Navegación y paginación (siempre presentes, ocultas en desktop por CSS) -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <section class="seccion-fraudes">
+        <div class="fondo-blob-fraude"></div>
+        
+        <h2 class="title-h2">Detección avanzada de fraudes</h2>
+        
+        <div class="contenedor-fraudes">
+            
+            <div class="columna imagen-fraude d-md-flex d-none">
+                <img src="assets/img/seccionFraudes.png" alt="Capas de fraude" />
+            </div>
+
+            <div class="columna contenido-fraudes">
+
+                <div class="acordeon-fraudes">
+                    <div class="item-fraude activo">
+                        <div class="titulo-fraude">
+                            <h3 class="title-h3">Fraude Transaccional</h3>
+                            <span class="icon"><i class="fa-solid fa-chevron-up"></i></span>
+                        </div>
+                        <div class="contenido-item-fraude">
+                            Detección en tiempo real de patrones anómalos en transacciones,
+                            previniendo pérdidas millonarias por uso fraudulento de tarjetas.
+                        </div>
+                    </div>
+
+                    <div class="item-fraude">
+                        <div class="titulo-fraude">
+                            <h3 class="title-h3">Robo de Identidad</h3>
+                            <span class="icon"><i class="fa-solid fa-chevron-up"></i></span>
+                        </div>
+                        <div class="contenido-item-fraude">
+                            Validación cruzada de datos personales con múltiples fuentes para identificar suplantación de identidades.
+                        </div>
+                    </div>
+
+                    <div class="item-fraude">
+                        <div class="titulo-fraude">
+                            <h3 class="title-h3">SIM Swapping</h3>
+                            <span class="icon"><i class="fa-solid fa-chevron-up"></i></span>
+                        </div>
+                        <div class="contenido-item-fraude">
+                            Monitoreo de comportamiento de líneas móviles para detectar transferencias fraudulentas de números telefónicos.
+                        </div>
+                    </div>
+
+                    <div class="item-fraude">
+                        <div class="titulo-fraude">
+                            <h3 class="title-h3">Lavado de Dinero</h3>
+                            <span class="icon"><i class="fa-solid fa-chevron-up"></i></span>
+                        </div>
+                        <div class="contenido-item-fraude">
+                            Análisis de patrones transaccionales complejos para identificar estructuración y movimientos sospechosos de fondos.
+                        </div>
+                    </div>
+
+                    <div class="item-fraude">
+                        <div class="titulo-fraude">
+                            <h3 class="title-h3">Abuso de Compensaciones</h3>
+                            <span class="icon"><i class="fa-solid fa-chevron-up"></i></span>
+                        </div>
+                        <div class="contenido-item-fraude">
+                            Detección de usuarios que explotan políticas de devoluciones, promociones y programas de lealtad de forma fraudulenta..
+                        </div>
+                    </div>
+
+                    <div class="item-fraude">
+                        <div class="titulo-fraude">
+                            <h3 class="title-h3">Fraude de Originación</h3>
+                            <span class="icon"><i class="fa-solid fa-chevron-up"></i></span>
+                        </div>
+                        <div class="contenido-item-fraude">
+                            Identificación temprana de usuarios fraudulentos o morosos durante procesos de onboarding y solicitudes de crédito.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columna imagen-fraude d-md-none d-flex">
+                <img src="assets/img/seccionFraudes.png" alt="Capas de fraude" />
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-capacidades">
+        <div class="descripcion-capacidades container">
+            <h2 class="title-h2">Capacidades avanzadas</h2>
+        </div>
+        <div class="contenedor-cards-capacidades container swiper-container mySwiper" id="swiper-tres">
+            <div class="fondo-circulos">
+                <div class="circulo-uno"></div>
+                <div class="circulo-dos"></div>
+                <div class="circulo-degradado"></div>
+            </div>
+            <div class="tarjetas-t1score" style="display: contents;">
+                <div class="card-t1score">
+                    <h3 class="title-h3">Hub de indicadores</h3>
+                    <ul>
+                        <li>Cybersource</li>
+                        <li>Emailage</li>
+                        <li>Telco (80M+ líneas)</li>
+                        <li>Buros de crédito</li>
+                        <li>Datos propios de T1</li>
+                    </ul>
+                </div>
+                <div class="card-t1score">
+                    <h3 class="title-h3">Motor de reglas tipo enterprise</h3>
+                    <ul>
+                        <li>Condiciones anidadas, segmentos, pesos</li>
+                        <li>Reglas por producto, canal o país</li>
+                        <li>Tipos de outcome personalizables</li>
+                        <li>Overrides automáticos</li>
+                    </ul>
+                </div>
+                <div class="card-t1score">
+                    <h3 class="title-h3">Listas dinámicas</h3>
+                    <ul>
+                        <li>IPs, emails, devices, BINs, RFCs</li>
+                        <li>Modificables vía API, panel o CSV</li>
+                        <li>Bloqueos reforzados</li>
+                        <li>Gestión automática</li>
+                    </ul>
+                </div>
+                <div class="card-t1score mr-md-1">
+                    <h3 class="title-h3">Escoring modular</h3>
+                    <ul>
+                        <li>Score de crédito, fraude, identidad</li>
+                        <li>Modelos adaptativos</li>
+                        <li>Score interpretable</li>
+                        <li>Integración de modelos propios</li>
+                    </ul>
+                </div>
+                <div class="card-t1score ml-md-1">
+                    <h3 class="title-h3">Decisión flow personalizable</h3>
+                    <ul>
+                        <li>Registro de usuarios</li>
+                        <li>Transacciones en tiempo real</li>
+                        <li>Evaluación de créditos</li>
+                        <li>Onboarding de sellers</li>
+                        <li>Cobros y pagos</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Navegación y paginación (siempre presentes, ocultas en desktop por CSS) -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <section class="seccion-como-funciona" id="como-funciona-t1-score">
+        <h2 class="title-h2">¿Cómo funciona?</h2>
+
+        <div class="flujo-pasos">
+            <div class="paso">
+                <div class="icono"><img src="assets/img/conecta-minutos.svg" alt="Conecta en minutos"></div>
+                <h3 class="title-h3">Conecta en minutos</h3>
+                <p>API REST y SDKs listos para usar. Módulos activables según tus necesidades (fraude, crédito, identidad, listas, etc.).</p>
+            </div>
+            <!-- Línea SVG conectando íconos -->
+            <svg class="linea-conectora" viewBox="0 0 1000 150" preserveAspectRatio="none">
+                <path d="M0,75 C200,0 800,150 1000,75" fill="none" stroke="#e74c3c" stroke-width="2" />
+            </svg>
+            <div class="paso">
+                <div class="icono"><img src="assets/img/define-logica.svg" alt="Define tu lógica"></div>
+                <h3 class="title-h3">Define tu lógica</h3>
+                <p>Usa reglas preconfiguradas o crea tus propias condiciones en el dashboard visual. Define outcomes: aprobar, rechazar, revisión manual, revisión IA.</p>
+            </div>
+            <!-- Línea SVG conectando íconos -->
+            <svg class="linea-conectora dos" viewBox="0 0 1000 150" preserveAspectRatio="none">
+                <path d="M0,75 C200,0 800,150 1000,75" fill="none" stroke="#e74c3c" stroke-width="2" />
+            </svg>
+
+            <div class="paso">
+                <div class="icono"><img src="assets/img/aprende-ajusta.svg" alt="Aprende y ajusta"></div>
+                <h3 class="title-h3">Aprende y ajusta</h3>
+                <p>T1score te muestra los motivos de cada decisión. Ajusta reglas, pesos o modelos con retroalimentación en vivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-partnerships">
+        <div class="contenedor-partnerships">
+            <h2 class="title-h2">Partnerships Estratégicos</h2>
+            <div class="logos-partners">
+                <img src="assets/img/partners/cybersource.svg" alt="Cybersource">
+                <img src="assets/img/partners/emailage.svg" alt="Emailage">
+                <img src="assets/img/partners/telcel.svg" alt="Telcel">
+                <img src="assets/img/partners/circulo-credito.svg" alt="Círculo de Crédito">
+                <img src="assets/img/partners/LexisNexis.svg" alt="LexisNexis">
+                <img src="assets/img/partners/Claro.svg" alt="Claro">
+                <img src="assets/img/partners/t1pagos.svg" alt="T1 Pagos">
+                <img src="assets/img/partners/t1identity.svg" alt="T1 Identity">
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-resultados" id="resultados-que-transforman">
+        <div class="contenedor-resultados">
+            <h2 class="title-h2">Resultados que transforman negocios</h2>
+            <p class="textos-p">Casos de éxito reales con impacto medible en toda la operación</p>
+
+            <div class="grid-resultados swiper-container mySwiper" id="swiper-nuevo">
+                <div class="tarjetas-resultados" style="display: contents;">
+                    <div class="item-resultados">
+                        <h3>+30%</h3>
+                        <h4 class="title-h4">Aumento en Ventas</h4>
+                        <p>Mejorando aprobación bancaria</p>
+                    </div>
+
+                    <div class="item-resultados">
+                        <h3>-40%</h3>
+                        <h4 class="title-h4">Reducción Morosidad</h4>
+                        <p>En clientes otorgantes</p>
+                    </div>
+
+                    <div class="item-resultados">
+                        <h3>10x</h3>
+                        <h4 class="title-h4">Menos Contracargos</h4>
+                        <p>Por fraude detectado</p>
+                    </div>
+
+                    <div class="item-resultados">
+                        <h3>+20%</h3>
+                        <h4 class="title-h4">Hit Rate Cobranza</h4>
+                        <p>Optimización de contactabilidad</p>
+                    </div>
+
+                    <div class="item-resultados">
+                        <h3>1/3</h3>
+                        <h4 class="title-h4">Detección Temprana</h4>
+                        <p>Fraudulentos antes del daño</p>
+                    </div>
+
+                    <div class="item-resultados">
+                        <h3>900M+</h3>
+                        <h4 class="title-h4">Emails Analizados</h4>
+                        <p>Base de datos masiva</p>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+    <section class="seccion-cta">
+        <div class="contenedor-cta">
+            <h2 class="title-h2">¿Listo para decisiones perfectas?</h2>
+            <p class="textos-p">Únete a las más de 100 empresas que ya transformaron su análisis de riesgo con nosotros</p>
+            <div class="boton-cta" onclick="openPopUp();">Solicitar demo</div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="popup-box" id="hid">
+        <div class="transparent-layer" onclick="closePopUp();"></div>
+        <div class="popup-inner">
+            <button class="next-step-btn color-black" onclick="closePopUp();">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="form-wrapper">
+                <h2>Completa el formulario y nuestro equipo se pondrá en contacto contigo para coordinar tu demo gratuito</h2>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenWZB0-SnH_f0f45I4qLyUBeGLTWSFNuYyq3n11XUot89uAw/viewform?embedded=true" width="640" height="818" style="width: 100%; height:100vh;" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        function setUniformSlideHeight(containerSelector, slideSelector) {
+            const container = document.querySelector(containerSelector);
+            if (!container) return;
+
+            const slides = container.querySelectorAll(slideSelector);
+            let maxHeight = 0;
+
+            // Resetear altura primero
+            slides.forEach(slide => slide.style.height = 'auto');
+
+            slides.forEach(slide => {
+                const height = slide.offsetHeight;
+                if (height > maxHeight) maxHeight = height;
+            });
+            console.log("maxHeight", maxHeight)
+
+            slides.forEach(slide => slide.style.height = `${maxHeight}px`);
+        }
+
+        const swiperConfigs = [
+            { id: 'swiper-uno', instance: null, classTarjetas: 'tarjetas-t1score', classCard: 'card-t1score' },
+            { id: 'swiper-dos', instance: null, classTarjetas: 'tarjetas-t1score', classCard: 'card-t1score' },
+            { id: 'swiper-tres', instance: null, classTarjetas: 'tarjetas-t1score', classCard: 'card-t1score' },
+            { id: 'swiper-nuevo', instance: null, classTarjetas: 'tarjetas-resultados', classCard: 'item-resultados' }
+        ];
+
+        function toggleAllSwipers() {
+            const isMobile = window.innerWidth <= 768;
+
+            swiperConfigs.forEach(config => {
+                const container = document.getElementById(config.id);
+                if (!container) return;
+
+                const tarjetas = container.querySelector(`.${config.classTarjetas}`);
+                const cards = tarjetas.querySelectorAll(`.${config.classCard}`);
+
+                if (isMobile && !config.instance) {
+                    container.classList.add('swiper');
+                    const wrapper = document.createElement('div');
+                    wrapper.classList.add('swiper-wrapper');
+
+                    cards.forEach(card => {
+                        card.classList.add('swiper-slide');
+                        wrapper.appendChild(card);
+                    });
+
+                    container.insertBefore(wrapper, container.querySelector('.swiper-button-prev'));
+
+                    config.instance = new Swiper(`#${config.id}`, {
+                        slidesPerView: "auto",
+                        spaceBetween: 10,
+                        loop: true,
+                        navigation: {
+                        nextEl: `#${config.id} .swiper-button-next`,
+                        prevEl: `#${config.id} .swiper-button-prev`,
+                        },
+                        on: {
+                        init: () => {
+                            // Igualar alturas al iniciar Swiper
+                            setUniformSlideHeight(`#${config.id}`, '.swiper-slide');
+                        },
+                        }
+                    });
+                } else if (!isMobile && config.instance) {
+                    config.instance.destroy(true, true);
+                    config.instance = null;
+
+                    const wrapper = container.querySelector('.swiper-wrapper');
+                    const fragment = document.createDocumentFragment();
+
+                    wrapper.querySelectorAll('.swiper-slide').forEach(slide => {
+                        slide.classList.remove('swiper-slide');
+                        fragment.appendChild(slide);
+                    });
+
+                    container.removeChild(wrapper);
+                    tarjetas.appendChild(fragment);
+                    container.classList.remove('swiper');
+                }
+            });
+        }
+
+        window.addEventListener('load', toggleAllSwipers);
+        window.addEventListener('resize', toggleAllSwipers);
+
+
+  
+        function closePopUp() {
+            var target = document.getElementById('hid')
+            console.log(target);
+            if (target) target.style.visibility = "hidden";
+        }
+        function openPopUp() {
+            var target = document.getElementById('hid')
+            console.log(target);
+            if (target){
+                target.style.visibility = "visible";
+                target.style.display = "block";
+            }
+        }
+        let logosSwiperInstance = null;
+
+function toggleLogosSwiper() {
+  const isMobile = window.innerWidth <= 768;
+  const container = document.querySelector('.logos-partners');
+
+  if (!container) return;
+
+  if (isMobile && !logosSwiperInstance) {
+    // Estructura Swiper
+    container.classList.add('swiper');
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('swiper-wrapper');
+
+    // Convertir imgs en slides
+    const images = Array.from(container.querySelectorAll('img'));
+    images.forEach(img => {
+      const slide = document.createElement('div');
+      slide.classList.add('swiper-slide');
+      slide.appendChild(img);
+      wrapper.appendChild(slide);
+    });
+
+    container.innerHTML = ''; // Limpiar el contenedor
+    container.appendChild(wrapper); // Insertar el wrapper
+
+    // Inicializar Swiper
+    logosSwiperInstance = new Swiper('.logos-partners', {
+      slidesPerView: 2,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+        delay: 1,
+        disableOnInteraction: false,
+      },
+      speed: 3000,
+      freeMode: true,
+      freeModeMomentum: false,
+    });
+
+  } else if (!isMobile && logosSwiperInstance) {
+    // Destruir Swiper y restaurar HTML plano
+    logosSwiperInstance.destroy(true, true);
+    logosSwiperInstance = null;
+
+    const wrapper = container.querySelector('.swiper-wrapper');
+    const fragment = document.createDocumentFragment();
+
+    wrapper.querySelectorAll('.swiper-slide').forEach(slide => {
+      const img = slide.querySelector('img');
+      fragment.appendChild(img);
+    });
+
+    container.innerHTML = '';
+    container.classList.remove('swiper');
+    container.appendChild(fragment);
+  }
+}
+
+window.addEventListener('load', toggleLogosSwiper);
+window.addEventListener('resize', toggleLogosSwiper);
+
+    </script>
+
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/carruselClientes.js"></script>
+    <script src="assets/js/acordeonFraude.js"></script>
+
+</body>
+</html>

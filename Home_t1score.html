@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI Logo Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: transparent;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container-logo {
+            position: relative;
+            width: 800px;
+            height: 800px;
+        }
+
+        .central-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            /* background: white;*/
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            z-index: 0;
+            /* Para agregar imagen de fondo: */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('img/logo01.png'); 
+        }
+
+        .logo-content {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .ti-text {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e74c3c;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .chart-icon {
+            width: 32px;
+            height: 32px;
+            border: 3px solid #2c3e50;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-line {
+            width: 16px;
+            height: 2px;
+            background: #e74c3c;
+            position: relative;
+            transform: rotate(45deg);
+        }
+
+        .chart-line::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #e74c3c;
+            border-radius: 50%;
+            left: -2px;
+            top: -1px;
+        }
+
+        .chart-line::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #e74c3c;
+            border-radius: 50%;
+            right: -2px;
+            top: -1px;
+        }
+
+        /* Cards flotantes */
+        .floating-card {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation-fill-mode: both;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .card-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        /* Posiciones de las cards con delays escalonados */
+        .card-top {
+            top: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 6s ease-in-out infinite, fadeInSlide 1s ease-out;
+            animation-delay: 0s, 0.2s;
+        }
+
+        .card-right {
+            top: 50%;
+            right: 160px;
+            transform: translateY(-50%);
+            animation: floatRight 6s ease-in-out infinite, fadeInSlideRight 1s ease-out;
+            animation-delay: 1s, 0.4s;
+        }
+
+        .card-bottom {
+            bottom: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: floatBottom 6s ease-in-out infinite, fadeInSlideBottom 1s ease-out;
+            animation-delay: 2s, 0.6s;
+        }
+
+        .card-left {
+            top: 50%;
+            left: 160px;
+            transform: translateY(-50%);
+            animation: floatLeft 6s ease-in-out infinite, fadeInSlideLeft 1s ease-out;
+            animation-delay: 3s, 0.8s;
+        }
+
+        /* Iconos de las cards con imágenes */
+        .icon-analytics { 
+            background: linear-gradient(45deg, #e74c3c, #ff6b6b);
+            /* Para agregar imagen: background-image: url('ruta-imagen.jpg'); */
+        }
+        .icon-database { 
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            /* Para agregar imagen: background-image: url('ruta-imagen.jpg'); */
+        }
+        .icon-cloud { 
+            background: linear-gradient(45deg, #0066ff, #3d8bfd);
+            /* Para agregar imagen: background-image: url('ruta-imagen.jpg'); */
+        }
+        .icon-security { 
+            background: linear-gradient(45deg, #8e44ad, #a569bd);
+            /* Para agregar imagen: background-image: url('ruta-imagen.jpg'); */
+        }
+
+        /* Líneas animadas */
+        .data-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #e74c3c, transparent);
+            animation: dataFlow 2s linear infinite;
+            z-index: 5;
+        }
+
+        .line-to-top {
+            top: 200px;
+            left: 50%;
+            width: 2px;
+            height: 120px;
+            transform: translateX(-50%);
+            background: linear-gradient(0deg, transparent, #e74c3c, transparent);
+        }
+
+        .line-to-right {
+            top: 50%;
+            right: 200px;
+            width: 120px;
+            height: 2px;
+            transform: translateY(-50%);
+            background: linear-gradient(90deg, transparent, #c0392b, transparent);
+            animation-delay: 1s;
+        }
+
+        .line-to-bottom {
+            bottom: 200px;
+            left: 50%;
+            width: 2px;
+            height: 120px;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, transparent, #e55039, transparent);
+            animation-delay: 2s;
+        }
+
+        .line-to-left {
+            top: 50%;
+            left: 200px;
+            width: 120px;
+            height: 2px;
+            transform: translateY(-50%);
+            background: linear-gradient(270deg, transparent, #d63031, transparent);
+            animation-delay: 3s;
+        }
+
+        /* Puntos de datos que viajan */
+        .data-point {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #e74c3c;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.8);
+            animation: travelData 3s linear infinite;
+        }
+
+        .point-top {
+            top: 320px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-name: travelTop;
+        }
+
+        .point-right {
+            top: 50%;
+            right: 320px;
+            transform: translateY(-50%);
+            animation-name: travelRight;
+            animation-delay: 1s;
+        }
+
+        .point-bottom {
+            bottom: 320px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-name: travelBottom;
+            animation-delay: 2s;
+        }
+
+        .point-left {
+            top: 50%;
+            left: 320px;
+            transform: translateY(-50%);
+            animation-name: travelLeft;
+            animation-delay: 3s;
+        }
+
+        /* Animación de entrada suave para las cards */
+        @keyframes fadeInSlide {
+            0% { 
+                opacity: 0; 
+                transform: translateX(-50%) translateY(-30px) scale(0.8);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+        }
+
+        /* Variantes para cada dirección - REMOVIDAS */
+
+        @keyframes fadeInSlideRight {
+            0% { 
+                opacity: 0; 
+                transform: translateY(-50%) translateX(30px) scale(0.8);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(-50%) translateX(0) scale(1);
+            }
+        }
+
+        @keyframes fadeInSlideBottom {
+            0% { 
+                opacity: 0; 
+                transform: translateX(-50%) translateY(30px) scale(0.8);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeInSlideLeft {
+            0% { 
+                opacity: 0; 
+                transform: translateY(-50%) translateX(-30px) scale(0.8);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(-50%) translateX(0) scale(1);
+            }
+        }
+
+        /* Animaciones de flotación para cada card */
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            25% { transform: translateX(-50%) translateY(-10px); }
+            50% { transform: translateX(-50%) translateY(0px); }
+            75% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        @keyframes floatRight {
+            0%, 100% { transform: translateY(-50%) translateX(0px); }
+            25% { transform: translateY(-50%) translateX(-10px); }
+            50% { transform: translateY(-50%) translateX(0px); }
+            75% { transform: translateY(-50%) translateX(10px); }
+        }
+
+        @keyframes floatBottom {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            25% { transform: translateX(-50%) translateY(-10px); }
+            50% { transform: translateX(-50%) translateY(0px); }
+            75% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        @keyframes floatLeft {
+            0%, 100% { transform: translateY(-50%) translateX(0px); }
+            25% { transform: translateY(-50%) translateX(-10px); }
+            50% { transform: translateY(-50%) translateX(0px); }
+            75% { transform: translateY(-50%) translateX(10px); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes dataFlow {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        @keyframes travelTop {
+            0% { transform: translate(-50%, 0); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translate(-50%, -80px); opacity: 0; }
+        }
+
+        @keyframes travelRight {
+            0% { transform: translate(0, -50%); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translate(80px, -50%); opacity: 0; }
+        }
+
+        @keyframes travelBottom {
+            0% { transform: translate(-50%, 0); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translate(-50%, 80px); opacity: 0; }
+        }
+
+        @keyframes travelLeft {
+            0% { transform: translate(0, -50%); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translate(-80px, -50%); opacity: 0; }
+        }
+
+        /* Efectos adicionales */
+        .glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: glow 4s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes glow {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-logo">
+        <!-- Efecto de resplandor -->
+        <div class="glow-effect"></div>
+        
+        <!-- Logo central con opción de imagen -->
+        <div class="central-logo">
+            <!-- Opción 2: Para usar imagen, reemplazar por:-->
+           <img src="assets/img/logo01.png" alt="T1score Logo" style="width: 120px; height: 120px; object-fit: contain;">  
+        </div>
+
+        <!-- Líneas de datos animadas -->
+        <div class="data-line line-to-top"></div>
+        <div class="data-line line-to-right"></div>
+        <div class="data-line line-to-bottom"></div>
+        <div class="data-line line-to-left"></div>
+
+        <!-- Puntos de datos viajeros -->
+        <div class="data-point point-top"></div>
+        <div class="data-point point-right"></div>
+        <div class="data-point point-bottom"></div>
+        <div class="data-point point-left"></div>
+
+        <!-- Cards flotantes con opción de imágenes -->
+        <div class="floating-card card-top">
+            <!-- Opción actual con icono de color -->
+            <div class="card-icon" style="background-image: url('assets/img/01.png');width: 80px;height: 80px;"></div> 
+        </div>
+
+        <div class="floating-card card-right">
+            <div class="card-icon" style="background-image: url('assets/img/02.png');width: 80px;height: 80px;"></div> 
+        </div>
+
+        <div class="floating-card card-bottom">
+            <div class="card-icon" style="background-image: url('assets/img/03.png');width: 80px;height: 80px;"></div> 
+        </div>
+
+        <div class="floating-card card-left">
+            <div class="card-icon" style="background-image: url('assets/img/04.png');width: 80px;height: 80px;"></div> 
+        </div>
+    </div>
+</body>
+</html>
