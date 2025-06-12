@@ -35,7 +35,7 @@
   font-weight: 500;
 }
 
-.header-container .demo-button {
+.header-container .demo-button, .mobile-menu .demo-button {
   background-color: #e03127;
   color: white;
   border: none;

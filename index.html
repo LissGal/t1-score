@@ -5,12 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>T1 Score</title>
+    <meta name="description" content="El hub global de riesgo e inteligencia antifraude. Evalúa millones de usuarios, transacciones y solicitudes de créditos sin fricción, en segundos, en todo el mundo">
+    <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
     <link rel="stylesheet" href="assets/css/headerFooter.css"/>
+    <link rel="icon" type="image/png" href="assets/img/logo_T1.png">
+    <meta property="og:title" content="El hub global de riesgo e inteligencia antifraude | T1 Score">
+    <meta property="og:description" content="Evalúa millones de usuarios, transacciones y solicitudes de créditos sin fricción, en segundos, en todo el mundo.">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="T1 Score">
 
 </head>
 <body>
@@ -510,12 +519,51 @@
     <div class="popup-box" id="hid">
         <div class="transparent-layer" onclick="closePopUp();"></div>
         <div class="popup-inner">
-            <button class="next-step-btn color-black" onclick="closePopUp();">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
+            <div class="header-pop-up">
+                <div class="logo-pop-up">
+                    <img src="assets/img/Logo_T1_score.svg">
+                </div>
+                <button class="next-step-btn color-black" onclick="closePopUp();">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
             <div class="form-wrapper">
-                <h2>Completa el formulario y nuestro equipo se pondrá en contacto contigo para coordinar tu demo gratuito</h2>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenWZB0-SnH_f0f45I4qLyUBeGLTWSFNuYyq3n11XUot89uAw/viewform?embedded=true" width="640" height="818" style="width: 100%; height:100vh;" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+
+                <div id="formulario">
+                    <h3 class="title-h3">Completa el formulario y nuestro equipo se pondrá en contacto contigo para coordinar tu demo gratuito</h3>
+                    
+                    <iframe name="dummyframe" style="display:none;"></iframe>
+
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSenWZB0-SnH_f0f45I4qLyUBeGLTWSFNuYyq3n11XUot89uAw/formResponse" method="POST" target="dummyframe" class="form-google">
+
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="entry.732630351" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="empresa">Empresa *</label>
+                            <input type="text" id="empresa" name="entry.2091669999" placeholder="Tu empresa" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico *</label>
+                            <input type="email" id="correo" name="entry.797688718" placeholder="Tu correo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="entry.1291570203" placeholder="Tu teléfono" required>
+                        </div>
+
+                        <button type="submit">Enviar</button>
+
+                    </form>
+                </div>
+
+                <h3 id="mensaje-exito" class="title-h3" style="display: none; padding:3rem; font-weight: bold;">
+                    ¡Formulario enviado correctamente!<br> Gracias por contactarnos.
+                </h3>
             </div>
         </div>
     </div>
@@ -687,6 +735,14 @@ function toggleLogosSwiper() {
 
 window.addEventListener('load', toggleLogosSwiper);
 window.addEventListener('resize', toggleLogosSwiper);
+
+const form = document.querySelector("form");
+  form.addEventListener("submit", function() {
+    setTimeout(function() {
+      document.getElementById("formulario").style.display = "none";
+      document.getElementById("mensaje-exito").style.display = "block";
+    }, 500); // espera un poco antes de ocultar
+  });
 
     </script>
 

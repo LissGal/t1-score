@@ -1128,10 +1128,12 @@ p.textos-p {
     .botones-banner-principal {
         width: 100%;
         margin: 2rem 0 1rem;
+        gap: 0;
     }
     .boton-banner {
         padding: 0.8rem 0;
         width: 47%;
+        margin: auto;
     }
     .client-section {
         margin: 2rem auto;
@@ -1398,23 +1400,57 @@ p.textos-p {
     opacity: .3;
     overflow: hidden;
 }
+.header-pop-up {
+    padding: 0 2.5% 0.5rem;
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+.header-pop-up .logo-pop-up{
+  width: 100px;
+}
 .popup-inner {
     z-index: 1000;
-    width: 100%;
-    max-width: 100%;
-    min-height: 50%;
+    width: 95%;
+    max-width: 1000px;
+    max-height: 80%;
     background: #fff;
     border-radius: 5px;
     padding: 1rem 0;
     margin: auto;
     top: 5%;
     position: relative;
+    overflow-y: auto;
 }
 .next-step-btn {
-    position: absolute;
-    right: 5px;
-    top: 5px;
+    font-size: 1.5rem;
 }
 .color-black {
     color: black;
+}
+.form-wrapper{
+    max-width: 700px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+.form-group { margin-bottom: 20px; }
+.form-google label { display: block; font-weight: bold; margin-bottom: 5px; text-align: left; }
+.form-google input, .form-google select { width: 95%; padding: 8px 2.5%; border: 1px solid #ccc; border-radius: 4px; }
+.form-google button { background: #ea0a2a; color: #fff; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; width: 100%; }
+.form-google{
+  width: 90%;
+  margin: 2rem auto 0;
+  max-width: 400px;
+  padding: 3rem;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .form-google {
+      width: 90%;
+      padding: 2rem 5%;
+  }
+
 }
